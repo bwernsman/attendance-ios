@@ -56,9 +56,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-vz-zO3">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DmO-vz-zO3" firstAttribute="centerY" secondItem="GmZ-4X-st8" secondAttribute="centerY" id="E43-ZQ-fXh"/>
+                            <constraint firstItem="DmO-vz-zO3" firstAttribute="centerX" secondItem="GmZ-4X-st8" secondAttribute="centerX" id="GGE-cx-NMN"/>
                             <constraint firstItem="GmZ-4X-st8" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="cM2-69-pBI"/>
                             <constraint firstItem="GmZ-4X-st8" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="mWg-VI-Hef"/>
                             <constraint firstAttribute="bottom" secondItem="GmZ-4X-st8" secondAttribute="bottom" id="owu-Zj-ajk"/>
@@ -68,6 +73,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="0y9-hd-c0C"/>
                     <connections>
+                        <outlet property="indicator" destination="DmO-vz-zO3" id="ASH-fR-PLV"/>
                         <outlet property="webView" destination="GmZ-4X-st8" id="Mdj-Nz-Xg7"/>
                     </connections>
                 </viewController>
@@ -131,7 +137,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wrb-NE-yHd">
-                                <rect key="frame" x="278" y="294" width="45" height="30"/>
+                                <rect key="frame" x="249" y="278" width="102" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="QkN-QG-NcK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="gpZ-r2-0Y0" eventType="touchUpInside" id="1H2-Op-6st"/>
@@ -140,10 +150,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XHZ-H8-fvE" firstAttribute="top" secondItem="Wrb-NE-yHd" secondAttribute="bottom" constant="276" id="2kY-ip-qLm"/>
+                            <constraint firstItem="Wrb-NE-yHd" firstAttribute="centerX" secondItem="TBR-PA-CtA" secondAttribute="centerX" id="3O8-T8-VHL"/>
                             <constraint firstItem="TBR-PA-CtA" firstAttribute="top" secondItem="nri-fL-ksU" secondAttribute="bottom" constant="112" id="Hi1-VS-rhA"/>
+                            <constraint firstItem="XHZ-H8-fvE" firstAttribute="top" secondItem="Wrb-NE-yHd" secondAttribute="bottom" constant="279" id="Pn5-0D-V4H"/>
                             <constraint firstItem="TBR-PA-CtA" firstAttribute="centerX" secondItem="kkX-Xy-xDv" secondAttribute="centerX" id="lxa-OO-JJZ"/>
-                            <constraint firstItem="Wrb-NE-yHd" firstAttribute="centerX" secondItem="TBR-PA-CtA" secondAttribute="centerX" id="wfL-1q-UWl"/>
+                            <constraint firstItem="Wrb-NE-yHd" firstAttribute="centerY" secondItem="kkX-Xy-xDv" secondAttribute="centerY" id="mOu-vc-Jll"/>
                         </constraints>
                     </view>
                     <connections>
