@@ -1,0 +1,26 @@
+platform :ios, '9.0'
+use_frameworks!
+
+post_install do |installer|
+    installer.pods_project.build_configuration_list.build_configurations.each do |configuration|
+        configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+    end
+end
+
+post_install do |installer|
+    `rm -rf Pods/Headers/Private`
+    `find Pods -regex 'Pods\/.*\.modulemap' -print0 | xargs -0 sed -i '' 's/private header.*/'`
+end
+
+
+
+target 'Attendance' do
+  pod 'Alamofire', '~> 3.0'
+  pod 'SwiftyJSON'
+  pod 'SwiftSpinner'
+  pod 'LNRSimpleNotifications'
+  pod 'Eureka', '~> 1.5'
+  pod 'SQLite.swift', '~> 0.10.1'
+end
+
+
